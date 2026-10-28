@@ -1,0 +1,25 @@
+.parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.country_holder{
+  display: flex;
+  background-color: black;
+  color: white;
+  margin: 5vw;
+
+  width: 70%;
+  gap: 1rem;
+}
+.image{
+  width: 50%;
+  margin: 1rem;
+}
+.image img {
+  width: 100%;
+}
+.info{
+  width: 50%;
+  margin: 1rem;
+}

@@ -5,15 +5,15 @@ import './styles/App.css'
 import type { fetchedObj } from './types/types.ts'
 
 function App() {
-  const [countries, setCountries] = useState<fetchedObj | null>(null)
+  // const [countries, setCountries] = useState<fetchedObj | null>(null)
 
-  useEffect(() => {
-    async function getCountries() {
-      const fetchedObj : fetchedObj = await fetchAll()
-      setCountries(fetchedObj)
-    }
-    getCountries()
-  }, [])
+  // useEffect(() => {
+  //   async function getCountries() {
+  //     const fetchedObj : fetchedObj = await fetchAll()
+  //     setCountries(fetchedObj)
+  //   }
+  //   getCountries()
+  // }, [])
 
   return(
     <div>
@@ -21,9 +21,9 @@ function App() {
       <label htmlFor="">Search</label>
       <input id="country" type="text" />
       <SearchButton />
-      {countries?.data.objects.map(country => 
+      {/* {countries?.data.objects.map(country => 
         <p key={country.names.common}>{country.names.common}</p>
-      )}
+      )} */}
     </div>
   )
 }
