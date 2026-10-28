@@ -3,6 +3,7 @@ import { fetchAll } from './api/index.ts'
 import SearchButton from './components/SearchButton.tsx'
 import './styles/App.css'
 import type { fetchedObj } from './types/types.ts'
+import SearchBar from './components/SearchBar.tsx'
 
 function App() {
   // const [countries, setCountries] = useState<fetchedObj | null>(null)
@@ -19,7 +20,7 @@ function App() {
     <div>
       <h1>Search</h1>
       <label htmlFor="">Search</label>
-      <input id="country" type="text" />
+      <SearchBar />
       <SearchButton />
       {/* {countries?.data.objects.map(country => 
         <p key={country.names.common}>{country.names.common}</p>
