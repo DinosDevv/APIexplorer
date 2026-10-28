@@ -13,7 +13,25 @@ interface fetchedObj {
         subregion: string,
         continents: [
 
+        ],
+        currencies: [
+          {
+            code: string,
+            name: string,
+            symbol: string
+          }
         ]
+        descriptions: {
+          long: string
+        },
+        languages: [
+          {
+            name: string
+          }
+        ],
+        links: {
+          wikipedia: string
+        }
       }
     ]
   }
