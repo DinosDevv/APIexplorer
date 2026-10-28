@@ -1,13 +1,16 @@
+import SearchButton from './components/SearchButton.tsx'
 import './styles/App.css'
 
 function App() {
+  
+
   return(
-    <form action={`countryInfo/${document.getElementById("country")}`}>
+    <div>
       <h1>Search</h1>
       <label htmlFor="">Search</label>
       <input id="country" type="text" />
-      <input type="submit" />
-    </form>
+      <SearchButton />
+    </div>
   )
 }
 export default App
