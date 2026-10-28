@@ -17,4 +17,18 @@ async function fetchAll() : Promise<fetchedObj> {
   return data
 }
 
-export { fetchCountry, fetchAll }
+const testCountries = [
+  'Albania',
+  'America',
+  'Greece',
+  'Cyprus',
+  'China',
+  'Italy',
+  'France',
+  'Ireland',
+  'Iceland',
+  'United Kingdom',
+  'Nigga Dick'
+]
+
+export { fetchCountry, fetchAll, testCountries }
