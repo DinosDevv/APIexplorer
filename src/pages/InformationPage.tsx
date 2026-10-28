@@ -13,18 +13,11 @@ export default function InformationPage() {
       if(countryName) {
         const fetchedObj : fetchedObj = await fetchCountry(countryName)
         setCountry(fetchedObj)
-        // setName(fetchedObj.data.objects[0].names.common)
-        // setFlagUrl(fetchedObj.data.objects[0].flag.url_svg)
-        // setFlagDesc(fetchedObj.data.objects[0].flag.description)
-        // setContinents(fetchedObj.data.objects[0].continents)
       }
     }
     getCountry()
   }, [])
-
-
-  //console.log(country)
-
+  
   return (
     <>
       <h1>Information for: { country?.data.objects[0].names.common }</h1>
