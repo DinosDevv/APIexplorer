@@ -9,6 +9,7 @@ export default function InformationPage() {
   const [name, setName] = useState('')
   const [flagUrl, setFlagUrl] = useState('../empty.svg')
   const [flagDesc, setFlagDesc] = useState('')
+  const [continents, setContinents] = useState([])
 
   useEffect(() => {
     async function getCountry() {
@@ -17,6 +18,7 @@ export default function InformationPage() {
         setName(fetchedObj.data.objects[0].names.common)
         setFlagUrl(fetchedObj.data.objects[0].flag.url_svg)
         setFlagDesc(fetchedObj.data.objects[0].flag.description)
+        setContinents(fetchedObj.data.objects[0].continents)
       }
     }
     getCountry()
@@ -30,6 +32,7 @@ export default function InformationPage() {
       <h1>Information for: { name }</h1>
       <img src={flagUrl} alt="" />
       <p>{flagDesc}</p>
+      <p>{continents}</p>
     </>
 
   )
