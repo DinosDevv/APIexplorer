@@ -1,5 +1,23 @@
 .search_bar {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 40vw;
+}
+.search_bar input {
+  height: 1.5rem;
+  font-size: 18px;
+}
+
+ul{
+  background-color: lightgray;
+  border: 2px solid black;
+}
+li{
+  padding: 10px;
+  margin: 2px;
+  background-color: white;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
