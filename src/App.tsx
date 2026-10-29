@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { fetchAll } from './api/index.ts'
 import SearchButton from './components/SearchButton.tsx'
 import './styles/App.css'
 import type { fetchedObj } from './types/types.ts'

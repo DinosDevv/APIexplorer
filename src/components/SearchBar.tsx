@@ -1,16 +1,17 @@
 import '../styles/SearchBar.css'
-import { testCountries } from '../api/index.ts'
+import { fetchCountries } from '../api/index.ts'
 import { useState } from 'react'
 
 export default function SearchBar() {
+  const countries = fetchCountries()
 
   let listOfCountries : string[] = []
   function updateList(value : string) : string[]{
     const newList : string[] = []
 
-    for(let i = 0; i < testCountries.length; i++) {
-      if(testCountries[i].toUpperCase().indexOf(value.toUpperCase()) > -1) {
-        newList.push(testCountries[i])
+    for(let i = 0; i < countries.length; i++) {
+      if(countries[i].name.toUpperCase().indexOf(value.toUpperCase()) > -1) {
+        newList.push(countries[i].name)
       }
     }
     return newList
@@ -25,10 +26,10 @@ export default function SearchBar() {
   if(value !== "") listOfCountries = updateList(value)
   return(
     <div className="search_bar">
-      <input value={value} onChange={handleChange} id="country" type="text"/>
+      <input autoComplete="off" value={value} onChange={handleChange} id="country" type="text"/>
       <ul>
         {listOfCountries?.map(country => 
-          <li key={country}><a href={`/countryInfo/${country}`}>{country}</a></li>
+          <a key={country} href={`/countryInfo/${country}`}><li>{country}</li></a>
         )}
       </ul>
     </div>
