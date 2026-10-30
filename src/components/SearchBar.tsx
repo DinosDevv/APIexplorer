@@ -1,8 +1,12 @@
 import '../styles/SearchBar.css'
 import { fetchCountries } from '../api/index.ts'
 import { useState } from 'react'
+import { useDebounce } from '../hooks/useDebounce.ts'
 
 export default function SearchBar() {
+  const [value, setValue] = useState<string>('')
+  const debouncedValue = useDebounce(value)
+
   const countries = fetchCountries()
 
   let listOfCountries : string[] = []
@@ -17,13 +21,12 @@ export default function SearchBar() {
     return newList
   }
 
-  const [value, setValue] = useState<string>('')
 
   const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   }
 
-  if(value !== "") listOfCountries = updateList(value)
+  if(debouncedValue)  listOfCountries = updateList(debouncedValue)
   return(
     <div className="search_bar">
       <input autoComplete="off" value={value} placeholder="What about Greece?" onChange={handleChange} id="country" type="text"/>
