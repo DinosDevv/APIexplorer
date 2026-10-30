@@ -4,11 +4,13 @@ import SearchBar from './components/SearchBar.tsx'
 
 function App() {
   return(
-    <div>
-      <h1>Search</h1>
-      <label htmlFor="">Search</label>
-      <SearchBar />
-      <SearchButton />
+    <div className='container'>
+      <h1>Find out everything about your favorite countries</h1>
+
+      <div className="search">
+        <SearchBar />
+        <SearchButton />
+      </div>
     </div>
   )
 }

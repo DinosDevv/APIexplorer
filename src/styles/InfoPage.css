@@ -1,7 +1,11 @@
 .parent{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center ;
+}
+.wikipedia{
+  color: white;
+  font-weight: bold;
 }
 .country_holder{
   display: flex;

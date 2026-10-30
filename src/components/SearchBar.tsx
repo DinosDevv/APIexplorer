@@ -26,7 +26,7 @@ export default function SearchBar() {
   if(value !== "") listOfCountries = updateList(value)
   return(
     <div className="search_bar">
-      <input autoComplete="off" value={value} onChange={handleChange} id="country" type="text"/>
+      <input autoComplete="off" value={value} placeholder="What about Greece?" onChange={handleChange} id="country" type="text"/>
       <ul>
         {listOfCountries?.map(country => 
           <a onClick={() => console.log(`${country}`)}key={country} href={`/countryInfo/${country}`}><li className="country_item">{country}<a href="#"><img src="../heart.svg" alt="" /></a></li>

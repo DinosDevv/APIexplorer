@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router"
+import '../styles/SearchButton.css'
 
 export default function SearchButton() {
   const navigate = useNavigate()

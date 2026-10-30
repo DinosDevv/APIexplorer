@@ -18,7 +18,8 @@ export default function InformationPage() {
     }
     getCountry()
   }, [])
-
+  console.log(country)
+  if(!country) return <h1>Loading Information...</h1>
   return (
     
     <div className="parent">
@@ -35,7 +36,7 @@ export default function InformationPage() {
           <p>{country?.data.objects[0].region}</p>
           <p>{country?.data.objects[0].subregion}</p>
           <p>{country?.data.objects[0].currencies[0].name} ({country?.data.objects[0].currencies[0].symbol})</p>
-          <p>More info? {country?.data.objects[0].links.wikipedia}</p>
+          <p>More info <a className="wikipedia" href={`${country?.data.objects[0].links.wikipedia}`}>here.</a></p>
         </div>
       </div>
     </div>
