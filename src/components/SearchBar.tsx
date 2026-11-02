@@ -21,6 +21,9 @@ export default function SearchBar() {
     return newList
   }
 
+  function likeCountry(country: string) {
+    console.log(`Added ${country} to liked countries!`)
+  }
 
   const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -32,8 +35,11 @@ export default function SearchBar() {
       <input autoComplete="off" value={value} placeholder="What about Greece?" onChange={handleChange} id="country" type="text"/>
       <ul>
         {listOfCountries?.map(country => 
-          <a onClick={() => console.log(`${country}`)}key={country} href={`/countryInfo/${country}`}><li className="country_item">{country}<a href="#"><img src="../heart.svg" alt="" /></a></li>
-          </a>
+          <div key={country}>
+            <a onClick={() => console.log(`${country}`)} href={`/countryInfo/${country}`}><li className="country_item">{country}</li>
+            </a>
+            <a onClick={() => likeCountry(country)}><img src="../heart.svg" alt="" /></a>
+          </div>
         )}
       </ul>
     </div>
